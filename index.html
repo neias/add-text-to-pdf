@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+
+	<div class="col-md-8">
+	  <iframe id="pdf"></iframe>
+	</div>
+	
+	<div class="col-md-4">
+
+	  <div class="row g-3">
+
+	    <div class="col-12">
+	      <button class="btn btn-primary" id="fileOpen">PDF Seçiniz</button> <br />
+            </div>
+
+	    <div class="col-sm-6">
+              <label for="firstName" class="form-label">Sol</label>
+              <input type="number" class="form-control" id="sol" placeholder="" value="" required="">
+              <div class="invalid-feedback">Valid first name is required.</div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">Alt</label>
+              <input type="number" class="form-control" id="alt" placeholder="" value="" required="">
+              <div class="invalid-feedback">Valid last name is required.</div>
+            </div>
+
+	    <div class="col-12">
+              <label for="address" class="form-label">Örnek Metin</label>
+              <input type="text" class="form-control" id="ornek-metin" placeholder="Örnek Metin" required="" />
+              <div class="invalid-feedback">Please enter your shipping address.</div>
+            </div>
+
+	    <div class="col-12">
+	      <button class="btn btn-primary" id="">Test</button> <br />
+            </div>
+
+	  </div>
+	  <hr class="my-4">
+
+	  <div class="row g-3">
+            <div class="col-12">
+              <label for="address" class="form-label">Kod Numaraları</label>
+              <textarea class="form-control" id="kod-numara" rows="6" placeholder="Metin" required=""></textarea>
+              <div class="invalid-feedback">Please enter your shipping address.</div>
+            </div>
+
+	    <div class="col-12">
+              <label for="address" class="form-label">Adet</label>
+              <input type="number" class="form-control" id="adet" placeholder="Adet" min="1" max="5" required="">
+              <div class="invalid-feedback">Please enter your shipping address.</div>
+            </div>
+
+	    <div class="col-12">
+	      <button class="btn btn-primary" id="">Çalıştır</button> <br />
+            </div>
+	  </div>
+	  <hr class="my-4">
+	  
+	  
+	</div>
+	
+      </div>
+    </div>
+    
+    <script src="./renderer.js"></script>
+  </body>
+</html>
