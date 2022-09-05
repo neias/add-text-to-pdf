@@ -1,8 +1,22 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 
-function render() {
-  ReactDom.render(<h2>Hollo from React</h2>, document.body);
+import { PDFDocument } from 'pdf-lib';
+
+async function loadPdf() {
+  // Fetch an existing PDF document.
+  const url = './demo.pdf';
+  const existingPdfBytes = await fetch(url).then(res => res.arrayBuffer());
+
+  // Load a `PDFDocument` from the existing PDF bytes.
+  return await PDFDocument.load(existingPdfBytes);
 }
 
-render();
+
+const App = () => {
+  return(
+    <>merhaba</>
+  );
+};
+
+export default App;
