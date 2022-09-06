@@ -5,7 +5,8 @@
   "author": "emreacar@hotmail.com",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder build -w -p never"
   },
   "devDependencies": {
     "electron": "^20.1.1"

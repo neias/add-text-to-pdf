@@ -32,7 +32,8 @@ const createWindow = () => {
 
   ipcMain.on('key:test', (err, data) => {
     testPdf(data).then(() => {
-      mainWindow.webContents.send("pathPdf", path.join(__dirname, 'deneme.pdf'));
+
+      mainWindow.webContents.send("pathPdf", path.join(data.newPath, data.newFile));
     }
     );
   });
@@ -82,7 +83,8 @@ async function testPdf(data) {
     lineHeight: 10,
   });
 
-  writeFileSync("deneme.pdf", await pdfDoc.save());
+  // writeFileSync(data.newPath, await pdfDoc.save());
+  writeFileSync(path.join(data.newPath, data.newFile), await pdfDoc.save());
 }
 
 
@@ -119,5 +121,5 @@ async function runPdf(data) {
     // });
   // });
   
-  writeFileSync("deneme.pdf", await nullPdf.save());
+  writeFileSync(path.join(data.newPath, data.newFile), await nullPdf.save());
 }
