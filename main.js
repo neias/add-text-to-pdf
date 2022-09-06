@@ -16,8 +16,8 @@ const createWindow = () => {
     }
   });
 
-  mainWindow.webContents.openDevTools();
-
+  // mainWindow.webContents.openDevTools();
+	mainWindow.setMenu(null);
   mainWindow.loadFile('index.html');
 
   ipcMain.on('key:openFile', (err) => {
@@ -71,6 +71,7 @@ async function loadPdf(url) {
 }
 
 async function testPdf(data) {
+
   const pdfDoc = await PDFDocument.load(readFileSync(data.pdf));
 
   const courierBoldFont = await pdfDoc.embedFont(StandardFonts.Courier);

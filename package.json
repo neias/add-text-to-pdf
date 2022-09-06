@@ -1,6 +1,6 @@
 {
   "name": "add-text-to-pdf",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "license": "MIT",
   "author": "emreacar@hotmail.com",
   "main": "main.js",

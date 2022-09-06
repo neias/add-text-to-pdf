@@ -16,16 +16,16 @@ ipcRenderer.on("changePath", (err, path) => {
 document.querySelector("#test").addEventListener('click', () => {
 
   const path = document.getElementById('hdnPath').value;
-  const yol = path.split('/');
+  const yol = path.split('\\');
   let newPathname = '';
   
-  for (i = 1; i < yol.length -1; i++) {
-    newPathname += "/";
+  for (i = 0; i < yol.length-1; i++) {
+	if(i!=0){
+    newPathname += "\\";
+}
     newPathname += yol[i];
   }
-  // newPathname =  newPathname + '/' + '(added)_' + yol[yol.length-1];
-
-  
+ 
   const data = {
     sol: document.querySelector("#sol").value,
     alt: document.querySelector("#alt").value,
@@ -34,20 +34,21 @@ document.querySelector("#test").addEventListener('click', () => {
     newPath: newPathname,
     newFile: '(added)_' + yol[yol.length-1]
   };
-
+	
   ipcRenderer.send('key:test', data);
 });
 
 document.querySelector("#run").addEventListener('click', () => {
   const path = document.getElementById('hdnPath').value;
-  const yol = path.split('/');
+  const yol = path.split('\\');
   let newPathname = '';
   
-  for (i = 1; i < yol.length -1; i++) {
-    newPathname += "/";
+  for (i = 0; i < yol.length-1; i++) {
+	if(i!=0){
+    newPathname += "\\";
+	}
     newPathname += yol[i];
   }
-  // newPathname =  newPathname + '/' + '(added)_' + yol[yol.length-1];
   
   const data = {
     sol: document.querySelector("#sol").value,
